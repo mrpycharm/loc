@@ -3,7 +3,7 @@ import motor, urllib
 from tornado.gen import coroutine
 
 # --- app module imports
-from loc_app import db
+from loc_app.app import db
 
 
 @coroutine
