@@ -31,4 +31,14 @@ def database_read_many(collection, read_filter={}, result_filter={}):
         log(results)
 
     return results
-    
+
+
+@coroutine
+def database_insert_one(collection, data):
+    if db:
+        db_collection = db[collection]
+        if not db_collection:
+            db_collection = yield db.create_collection(collection)
+
+        results = yield db_collection.insert_one(data)
+        log(results) 
