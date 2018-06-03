@@ -1,6 +1,6 @@
 # --- python imports
 import motor
-from urllib import parse
+from urllib.parse import quote
 
 # --- app module import
 from loc_app.config.db_config import DB_USER, DB_PASS, DB_URL, DB_DB
