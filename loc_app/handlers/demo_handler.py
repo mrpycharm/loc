@@ -2,7 +2,7 @@ from tornado.web import RequestHandler
 from tornado.gen import coroutine
 
 # --- app module imports
-from database.database import database_read_one
+from loc_app.database.database import database_read_one
 
 
 class MainHandler(RequestHandler):
