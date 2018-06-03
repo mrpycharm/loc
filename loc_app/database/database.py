@@ -41,4 +41,16 @@ def database_insert_one(collection, data):
             db_collection = yield db.create_collection(collection)
 
         results = yield db_collection.insert_one(data)
-        log(results) 
+        log(results)
+
+
+@coroutine
+def database_insert_many(collection, data, ordered=True):
+    if db:
+        db_collection = db[collection]
+        if not db_collection:
+            db_collection = yield db.create_collection(collection)
+
+        if isinstance(data, list):
+            results = yield db_collection.insert_many(data, ordered=ordered)
+            log(results)
