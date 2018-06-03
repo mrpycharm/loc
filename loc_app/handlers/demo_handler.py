@@ -1,5 +1,5 @@
 from tornado.web import RequestHandler
-from tornad.gen import coroutine, sleep
+from tornado.gen import coroutine, sleep
 
 
 class MainHandler(RequestHandler):
