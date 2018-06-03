@@ -1,5 +1,6 @@
 import tornado.ioloop
 from tornado.web import Application
+from tornado.httpserver import HTTPServer
 from handlers.demo_handler import MainHandler
 
 
@@ -10,5 +11,6 @@ def make_app():
 
 if __name__ == '__main__':
     app = make_app()
-    app.listen(8000)
+    server = HTTPServer(app)
+    server.listen(8000)
     tornado.ioloop.IOLoop.current().start()
