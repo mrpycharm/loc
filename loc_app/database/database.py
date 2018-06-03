@@ -7,4 +7,4 @@ from loc_app import db
 
 @coroutine
 def database_read_one(collection, read_filter={}):
-    print db
+    print(db)
