@@ -3,4 +3,4 @@ from tornado.web import RequestHandler
 
 class MainHandler(RequestHandler):
 	def get(self):
-		self.write('Hello World!')
+		self.write('Hello World!\n')
