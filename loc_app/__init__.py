@@ -1,4 +1,4 @@
-# --- python imports
+# --- python import
 import motor
 from urllib.parse import quote
 
