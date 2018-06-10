@@ -4,7 +4,9 @@ from tornado.gen import coroutine
 
 # --- app module imports
 from loc_app.helpers.utils import posted
+from loc_app.helpers.users import current
 from loc_app.helpers.errors import InvalidUsage
+from loc_app.database.database import database_read_one
 
 
 def expects(fields):
@@ -28,4 +30,20 @@ def expects(fields):
         return _wrapper
 
     return _validate
+
+
+def authenticate_user(handler_func):
+
+    @wraps(handler_func)
+    @coroutine
+    def _wrapper(self, *args, **kwargs):
+
+        user = yield current(self)
+        if not user:
+            raise InvalidUsage(reason='Invalid or expired token.', status_code=401)
+
+        yield handler_func(self, *args, **kwargs)
+
+    return _wrapper
+
 

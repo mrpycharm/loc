@@ -23,3 +23,16 @@ def create_user(phone_number):
         yield database_insert_one('user', user)
     
     return user
+
+
+@coroutine
+def current(self):
+
+    token = self.request.headers.get('X-Auth_token')
+    if not token:
+        return None
+    
+    user = yield database_read_one('user', {'token' : token})
+    return user
+
+
