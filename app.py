@@ -11,8 +11,8 @@ if __name__ == '__main__':
 
     app = Application([
         (r'/', MainHandler),\
-        (r'/signup', SignupHandler),
-        (r'/login', LoginHandler),
+        (r'/send_otp', GenerateOTPHandler),
+        (r'/verify_otp', VerifyOTPHandler),
     ])
 
     server = HTTPServer(app)

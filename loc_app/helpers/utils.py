@@ -27,3 +27,5 @@ def hash_password(text):
     hashed_pass = hashlib.sha512((text + salt).encode('UTF-8')).hexdigest()
 
     return hashed_pass, salt
+
+

@@ -13,7 +13,7 @@ def database_read_one(collection, read_filter={}, result_filter=None):
         if not db_collection:
             db_collection = yield db.create_collection(collection)
 
-        if read_filter:
+        if result_filter:
             results = yield db_collection.find_one(read_filter, result_filter)
         else:
             results = yield db_collection.find_one(read_filter)
