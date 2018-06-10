@@ -4,12 +4,15 @@ from tornado.httpserver import HTTPServer
 
 # --- app module import
 from loc_app.handlers.demo_handler import MainHandler
+from loc_app.handlers.user_handler import *
 
 
 if __name__ == '__main__':
 
     app = Application([
-        (r'/', MainHandler),
+        (r'/', MainHandler),\
+        (r'/signup', SignupHandler),
+        (r'/login', LoginHandler),
     ])
 
     server = HTTPServer(app)
