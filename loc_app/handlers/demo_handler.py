@@ -3,11 +3,11 @@ from tornado.web import RequestHandler
 
 # --- app module imports
 from loc_app.handlers.base_handler import BaseHandler
-from loc_app.helpers.errors import InvalidUsage
+from loc_app.errors.base_errors import InvalidUsage
 
 
 class MainHandler(BaseHandler):
     @coroutine
     def get(self):
-        raise InvalidUsage(reason='Nothing', status_code=400)
-            
+        # self.write("Hola World!")
+        raise InvalidUsage(reason="Noting", status_code=500)
