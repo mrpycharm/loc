@@ -1,13 +1,4 @@
 # --- python import
-import motor
-from urllib.parse import quote
+# import motor
 
-# --- app module import
-from loc_app.config.db_config import DB_USER, DB_PASS, DB_URL, DB_DB
-
-
-# generate a motor client
-client = motor.motor_tornado.MotorClient('mongodb://' + DB_USER + ':' + quote(DB_PASS) + '@' + DB_URL + '/' + DB_DB + '?authSource=admin')
-
-# get the db
-db = client[DB_DB]
+# --- rest of the initialization goes here
