@@ -3,7 +3,7 @@ from tornado.web import Application
 from tornado.httpserver import HTTPServer
 
 # --- app module import
-from loc_app.handlers.demo_handler import MainHandler
+from stocks.handlers.demo_handler import MainHandler
 
 
 if __name__ == '__main__':
