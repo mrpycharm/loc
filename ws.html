@@ -1,0 +1,17 @@
+<html>
+    <head>
+        <script>
+            var ws = new WebSocket('ws://localhost:8000/ws');
+            ws.onopen = function(){
+                console.log('opened connection!');
+                ws.send('Hello socket')
+            }
+            ws.onerror = function(e){
+                console.log("Errorrrrrrrrrr: " + e.error);
+            }
+        </script>
+    </head>
+    <body>
+
+    </body>
+</html>

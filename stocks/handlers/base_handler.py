@@ -14,8 +14,8 @@ class BaseHandler(RequestHandler):
             message = 'Something went wrong.'
         
         error = {
-            'status_code' : status_code,
-            'message' : message
+            'status_code': status_code,
+            'message': message
         }
 
         # call finish
